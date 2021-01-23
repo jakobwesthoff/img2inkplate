@@ -1,0 +1,22 @@
+{
+  "name": "img2inkplate",
+  "version": "1.0.0",
+  "description": "Image to Inkplate 7-bit raw format converter",
+  "type": "module",
+  "bin": {
+    "img2inkplate": "src/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/cli.js"
+  },
+  "author": "Jakob Westhoff <jakob@westhoffswelt.de> (http://westhoffswelt.de)",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "meow": "^9.0.0",
+    "sharp": "^0.27.0",
+    "uuid": "^8.3.2"
+  }
+}
