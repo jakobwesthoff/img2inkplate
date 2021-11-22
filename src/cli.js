@@ -44,8 +44,6 @@ if (cli.flags.dither !== undefined) {
   }
 }
 
-console.log(cli.flags);
-
 let width, height;
 if (cli.flags.resolution !== undefined) {
   [width, height] = cli.flags.resolution.split("x");
