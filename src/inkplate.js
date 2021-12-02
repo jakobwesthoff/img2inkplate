@@ -1,6 +1,7 @@
 export const to7bitRaw = (img) => {
+  const bufferSize = img.height * Math.floor(img.width / 2) + (img.width & 1) * img.height;
   const output = Buffer.alloc(
-    img.height * Math.floor(img.width / 2) + (img.width & 1) * img.height
+    bufferSize
   );
   let offset = 0;
   for (let y = 0; y < img.height; y++) {
@@ -16,7 +17,7 @@ export const to7bitRaw = (img) => {
         accumulator = 0;
       }
     }
-    if (img.width & (1 === 1)) {
+    if (img.width & 1 ) {
       output.writeUInt8(accumulator, offset++);
     }
   }

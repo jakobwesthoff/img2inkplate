@@ -54,8 +54,8 @@ export const img2inkplate = async (
 
     const img = {
       data: [],
-      height: targetWidth,
-      width: targetHeight,
+      height: targetHeight,
+      width: targetWidth,
     };
 
     for (let idx = 0; idx < data.length; idx++) {

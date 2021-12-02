@@ -11,9 +11,9 @@ const cli = meow(
     --dither=<DITHERING>  Select a dithering style to be used
                           Choose between the following:
                           * floyd-steinberg
-                          * jarvis-judice-ninke  
+                          * jarvis-judice-ninke
                           * atkinson
-  
+
     --resolution=<width>x<height> Target resolution to scale the output to.
                                   (Default: 800x600)
 `,
@@ -54,4 +54,4 @@ if (cli.flags.resolution !== undefined) {
   }
 }
 
-await img2inkplate(cli.input[0], cli.input[1], cli.flags.dither, width, height);
+await img2inkplate(cli.input[0], cli.input[1], cli.flags.dither, parseInt(width), parseInt(height));
