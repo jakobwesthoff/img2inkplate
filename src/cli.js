@@ -16,6 +16,12 @@ const cli = meow(
 
     --resolution=<width>x<height> Target resolution to scale the output to.
                                   (Default: 800x600)
+
+    --acep  Output a dithered 7 color image palette displayable by AcEP
+            epaper displays
+
+    --png   Output png files in addition to the inkplates binary format
+            files.
 `,
   {
     flags: {
@@ -25,6 +31,12 @@ const cli = meow(
       resolution: {
         type: "string",
       },
+      acep: {
+        type: "boolean",
+      },
+      png: {
+        type: "boolean",
+      }
     },
   }
 );
@@ -54,4 +66,12 @@ if (cli.flags.resolution !== undefined) {
   }
 }
 
-await img2inkplate(cli.input[0], cli.input[1], cli.flags.dither, parseInt(width), parseInt(height));
+await img2inkplate(
+  cli.input[0],
+  cli.input[1],
+  cli.flags.dither,
+  parseInt(width),
+  parseInt(height),
+  cli.flags.acep,
+  cli.flags.png
+);
